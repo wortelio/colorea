@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+    <header>
+        <title>Prueba para vi</video></title>
+        <meta charset = "utf-8">
+        <style type="text/css">
+            #cabeza {
+                color: purple
+            }
+            #colorea {
+                color: blue
+            }
+        </style>
+
+        <script>
+
+            let i=true;
+
+            const colores = () => {
+                console.log("ejecuto colores");
+                
+                if (i) {
+                    document.getElementById("cabeza").outerHTML = `<h1 id = "cabeza" style = "color: red">Colorea vi</h1>`;
+                    i=false;
+                } else {
+                    document.getElementById("cabeza").outerHTML = `<h1 id = "cabeza" style = "color: green">Colorea vi</h1>`;
+                    i=true;
+            }
+        }
+            
+            document.addEventListener('DOMContentLoaded', () => console.log("Se cargó el DOM"));
+            document.addEventListener('click', ev => {
+                if (event.target.matches("#colorea")) colores();
+            })
+        </script>
+    </header>
+
+    <body>
+        <h1 id = "cabeza">Es una prueba para vi</h1>
+
+        <button id = "colorea">Cambia el color del texto</button>
+    </body>
+</html>
